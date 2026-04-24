@@ -1,5 +1,5 @@
 import { SiInstagram, SiFacebook } from "react-icons/si";
-import schoolImage from "@assets/generated_images/school.png";
+import schoolImage from "@assets/cucei_logo_1777005467241.jpg";
 
 export function Footer() {
   return (
@@ -37,11 +37,11 @@ export function Footer() {
             Desarrollo
           </span>
 
-          <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-primary/40 shadow-lg mb-5">
+          <div className="w-28 h-28 rounded-full overflow-hidden bg-white border-2 border-primary/40 shadow-lg mb-5 flex items-center justify-center p-3">
             <img
               src={schoolImage}
-              alt="Escuela"
-              className="w-full h-full object-cover"
+              alt="Centro Universitario de Ciencias Exactas e Ingenierías"
+              className="w-full h-full object-contain"
               loading="lazy"
             />
           </div>
@@ -51,6 +51,9 @@ export function Footer() {
           </p>
           <p className="text-white/70 text-sm font-light mb-1">
             Zeus Cobián
+          </p>
+          <p className="text-white/80 text-sm font-light max-w-xs leading-snug mt-2 mb-2">
+            Centro Universitario de Ciencias Exactas e Ingenierías
           </p>
           <p className="text-white/50 text-xs font-light tracking-wide uppercase">
             Febrero — Mayo 2026
