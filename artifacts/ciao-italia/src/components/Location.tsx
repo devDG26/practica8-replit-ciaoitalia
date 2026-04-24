@@ -40,16 +40,20 @@ export function Location() {
                 <div>
                   <h3 className="font-serif text-xl font-bold text-foreground mb-2">Horarios</h3>
                   <ul className="text-muted-foreground font-light space-y-1">
-                    <li className="flex justify-between w-48">
-                      <span>Lun - Jue:</span>
-                      <span>13:00 - 22:00</span>
+                    <li className="flex justify-between w-56">
+                      <span>Lunes:</span>
+                      <span>13:00 - 23:00</span>
                     </li>
-                    <li className="flex justify-between w-48">
-                      <span>Vie - Sáb:</span>
-                      <span>13:00 - 23:30</span>
+                    <li className="flex justify-between w-56">
+                      <span>Martes:</span>
+                      <span className="text-destructive font-medium">Cerrado</span>
                     </li>
-                    <li className="flex justify-between w-48">
-                      <span>Dom:</span>
+                    <li className="flex justify-between w-56">
+                      <span>Miércoles - Sábado:</span>
+                      <span>13:00 - 23:00</span>
+                    </li>
+                    <li className="flex justify-between w-56">
+                      <span>Domingo:</span>
                       <span>13:00 - 21:00</span>
                     </li>
                   </ul>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import chefPastaImage from "@assets/generated_images/chef_pasta.png";
 
 export function About() {
   return (
@@ -14,8 +15,8 @@ export function About() {
           >
             <div className="aspect-[4/5] w-full max-w-md mx-auto relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1549488344-c4b95886561e?auto=format&fit=crop&w=1000&q=80" 
-                alt="Chef preparing pasta" 
+                src={chefPastaImage} 
+                alt="Chef preparando pasta artesanal" 
                 className="w-full h-full object-cover rounded-sm shadow-xl"
                 loading="lazy"
               />

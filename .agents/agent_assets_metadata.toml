@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "khXC9QnbGSvfrK0ioUqH8"
+uri = "file://attached_assets/generated_images/chef_pasta.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "kvvJoTno6yLVnriHo45eK"
+uri = "file://attached_assets/generated_images/school.png"
+type = "image"
+title = "generated_image"
