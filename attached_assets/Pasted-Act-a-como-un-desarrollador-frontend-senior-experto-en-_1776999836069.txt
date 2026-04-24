@@ -1,0 +1,400 @@
+Actúa como un desarrollador frontend senior experto en React, arquitectura escalable y buenas prácticas.
+
+OBJETIVO:
+Construir un sitio web completo, elegante y funcional para el restaurante "CIAO Italia", listo para producción y despliegue en Vercel.
+
+====================================================================
+🔧 CONFIGURACIÓN INICIAL (CRÍTICA Y OBLIGATORIA)
+====================================================================
+
+- Usar Vite + React
+- Crear automáticamente el archivo vercel.json en la raíz con EXACTAMENTE:
+
+{
+"framework": "vite",
+"outputDirectory": "dist/public",
+"rewrites": [
+{ "source": "/(.*)", "destination": "/index.html" }
+]
+}
+
+- No omitir este archivo bajo ninguna circunstancia
+- Proyecto listo para deploy sin modificaciones
+
+====================================================================
+🏗️ ARQUITECTURA DEL PROYECTO (OBLIGATORIA)
+====================================================================
+
+Estructura:
+
+/src
+/components
+Navbar.jsx
+Hero.jsx
+About.jsx
+Menu.jsx
+MenuItem.jsx
+Gallery.jsx
+ReservationForm.jsx
+Footer.jsx
+/data
+menuData.js
+/hooks (si es necesario)
+/assets
+App.jsx
+main.jsx
+
+- Código modular, limpio y reutilizable
+- Separación estricta entre lógica, UI y datos
+
+====================================================================
+📦 STACK
+====================================================================
+
+- React con hooks
+- CSS: Tailwind (preferido) o CSS Modules (elige uno y sé consistente)
+- Sin backend
+- No usar librerías innecesarias
+
+====================================================================
+📊 GESTIÓN DE DATOS DEL MENÚ (OBLIGATORIO)
+====================================================================
+
+- NO hardcodear productos en JSX
+- Crear /src/data/menuData.js
+
+Formato:
+
+export const menuData = {
+pastas: [],
+pizzas: [],
+ensaladas: []
+};
+
+Cada producto:
+
+{
+name: string,
+description?: string,
+price?: number,
+options?: [
+{ type: string, price: number }
+],
+image?: string,
+featured?: boolean
+}
+
+- Incluir TODOS los productos proporcionados
+- Marcar al menos 3 por categoría como featured
+- Usar imágenes de Unsplash en destacados
+
+====================================================================
+⚛️ RENDERIZADO DINÁMICO (CRÍTICO)
+====================================================================
+
+- Menu.jsx:
+- usar useState para categoría activa
+- obtener datos desde menuData
+- renderizar con .map()
+
+- Manejar:
+1. price único
+2. múltiples options
+
+- Crear MenuItem.jsx:
+- componente reutilizable
+- recibe item
+- renderiza lógica condicional
+
+- NO duplicar código por categoría
+- NO hardcodear JSX
+
+====================================================================
+🎨 DISEÑO
+====================================================================
+
+Colores:
+- #1C1C1C (negro)
+- #D4AF37 (dorado)
+- #FFFEF7 (crema)
+- #708238 (verde olivo)
+
+Tipografía:
+- Títulos elegantes (tipo Playfair)
+- Texto limpio sans-serif
+
+Estilo:
+- Minimalista
+- Elegante
+- Espaciado amplio
+
+====================================================================
+📱 SECCIONES (IMPLEMENTAR TODAS)
+====================================================================
+
+1. Navbar
+- Fijo
+- Reduce tamaño al hacer scroll
+- Scroll suave
+
+2. Hero
+- Imagen fullscreen (Unsplash)
+- Overlay oscuro 40%
+- CTA:
+- "Reserva tu mesa"
+- "Ver menú"
+
+3. About
+- 2 columnas
+- Historia + filosofía
+
+4. Menú
+- Tabs dinámicos
+- Render desde JSON
+- Sección destacados
+
+5. Galería
+- Grid responsive
+- Lightbox funcional
+- Hover zoom
+
+6. Reservaciones
+- Formulario con validación:
+- fecha
+- hora (según horarios reales)
+- personas
+- nombre
+- teléfono
+- Confirmación sin reload
+
+7. Ubicación
+- Google Maps embed
+- Dirección:
+Calle Reforma 1102-A, Guadalajara
+- Teléfono clickeable
+- Horarios correctos
+
+8. Footer
+- Fondo oscuro
+- Info centrada
+
+====================================================================
+⚡ UX / PERFORMANCE (OBLIGATORIO)
+====================================================================
+
+- 100% responsive (mobile-first)
+- Lazy loading imágenes
+- Animaciones suaves (fade, slide)
+- Hover states en todo
+- Código optimizado
+
+====================================================================
+📱 MOBILE
+====================================================================
+
+- Menú hamburguesa funcional
+- Botones grandes
+- Layout adaptado
+
+====================================================================
+🚫 REGLAS ESTRICTAS
+====================================================================
+
+- NO hardcodear datos del menú en JSX
+- NO mezclar datos con UI
+- NO duplicar lógica
+- NO omitir secciones
+- NO dejar placeholders vacíos en contenido clave
+
+====================================================================
+✅ ENTREGABLE
+====================================================================
+
+- Código completo listo para ejecutar
+- Todos los archivos incluidos
+- Estructura clara
+- Sin errores
+- Listo para deploy en Vercel
+Considera el menú como el archivo menuData.js:
+export const menuData = {
+  pastas: [
+    {
+      name: "Lasagna",
+      price: 185,
+      description: "Pan de ajo y ensalada",
+      featured: true,
+      image: "https://source.unsplash.com/featured/?lasagna"
+    },
+    {
+      name: "Penette Sirrento",
+      options: [
+        { type: "pollo", price: 155 },
+        { type: "arrachera", price: 165 },
+        { type: "camarón", price: 175 }
+      ],
+      description: "Tocino, salsa pomodoro, crema, vodka, 110g de proteína",
+      featured: true,
+      image: "https://source.unsplash.com/featured/?pasta"
+    },
+    {
+      name: "Fetuccini Alfredo",
+      options: [
+        { type: "arrachera", price: 165 },
+        { type: "camarón", price: 175 }
+      ],
+      description: "Crema Alfredo, 110g de proteína y pan de ajo"
+    },
+    {
+      name: "Tortiglioni a la Arrabiata",
+      options: [
+        { type: "pollo", price: 155 },
+        { type: "arrachera", price: 165 },
+        { type: "camarón", price: 175 }
+      ],
+      description: "Chile de árbol, albahaca, salsa pomodoro, parmesano, 110g proteína"
+    },
+    {
+      name: "Feticcomo Mare Orto",
+      options: [
+        { type: "pollo", price: 155 },
+        { type: "arrachera", price: 165 },
+        { type: "camarón", price: 175 }
+      ],
+      description: "Calabaza, espinaca, crema Alfredo, perejil, 110g proteína"
+    }
+  ],
+
+  pizzas: [
+    {
+      name: "Pizza 3 hongos",
+      price: 220,
+      description: "Champiñón, seta, portobello",
+      featured: true,
+      image: "https://source.unsplash.com/featured/?mushroom-pizza"
+    },
+    {
+      name: "Pizza pollo estilo boneless",
+      price: 284,
+      description: "BBQ, Buffalo, Mango Habanero o Lemon Pepper",
+      featured: true,
+      image: "https://source.unsplash.com/featured/?chicken-pizza"
+    },
+    {
+      name: "Pizza Italiana",
+      price: 220,
+      description: "Champiñón, pepperoni, salchicha italiana"
+    },
+    {
+      name: "Pizza Margarita",
+      price: 220,
+      description: "Jitomate, albahaca, queso de cabra, mozzarella, parmesano"
+    },
+    {
+      name: "Pizza 4 Carnes",
+      price: 230,
+      description: "Salami, pepperoni, jamón, tocino"
+    },
+    {
+      name: "Pizza Bolognesa",
+      price: 230
+    },
+    {
+      name: "Pizza Mexicana",
+      price: 230,
+      description: "Chorizo, cebolla, jitomate, chile serrano, aguacate"
+    },
+    {
+      name: "Pizza Campesina",
+      price: 230,
+      description: "Champiñón, jitomate, brócoli, cebolla, espinaca, pimiento, aceituna negra"
+    },
+    {
+      name: "Pizza al Pastor",
+      price: 250,
+      description: "Carne adobada, piña, cebolla y cilantro"
+    },
+    {
+      name: "Pizza Hawaiana",
+      price: 170
+    },
+    {
+      name: "Pizza Pepperoni",
+      price: 140
+    },
+    {
+      name: "Pizza Individual",
+      price: 99
+    },
+    {
+      name: "Pizza Dulce Tentación",
+      price: 230,
+      description: "Nutella, fresa, arándano, almendra y plátano",
+      featured: true,
+      image: "https://source.unsplash.com/featured/?dessert-pizza"
+    },
+    {
+      name: "Arma tu pizza",
+      description: "Costo base + $30 por ingrediente",
+      custom: true,
+      ingredients: [
+        "Aceituna negra",
+        "Tocino",
+        "Piña",
+        "Jalapeño",
+        "Salchicha italiana",
+        "Elote",
+        "Cebolla",
+        "Jitomate",
+        "Albahaca",
+        "Champiñón",
+        "Pimiento morrón",
+        "Pepperoni",
+        "Salami",
+        "Jamón"
+      ]
+    }
+  ],
+
+  ensaladas: [
+    {
+      name: "De la casa",
+      options: [
+        { type: "pollo", price: 155 },
+        { type: "arrachera", price: 165 },
+        { type: "camarón", price: 175 }
+      ],
+      description: "Lechuga italiana, zanahoria, manzana, pera, frutos secos, queso de cabra",
+      featured: true,
+      image: "https://source.unsplash.com/featured/?salad"
+    },
+    {
+      name: "César",
+      options: [
+        { type: "pollo", price: 150 },
+        { type: "arrachera", price: 155 },
+        { type: "camarón", price: 170 }
+      ],
+      description: "Lechuga, jitomate cherry, crotones, parmesano, pasta fusilli",
+      featured: true,
+      image: "https://source.unsplash.com/featured/?caesar-salad"
+    },
+    {
+      name: "Fresca",
+      options: [
+        { type: "pollo", price: 150 },
+        { type: "arrachera", price: 155 },
+        { type: "camarón", price: 170 }
+      ],
+      description: "Lechuga, jitomate, cebolla, pepino, crotones, pasta fusilli"
+    },
+    {
+      name: "Vicana",
+      options: [
+        { type: "pollo", price: 155 },
+        { type: "arrachera", price: 165 },
+        { type: "camarón", price: 175 }
+      ],
+      description: "Jitomate, cebolla, panela, aguacate, aceite de oliva"
+    }
+  ]
+};
